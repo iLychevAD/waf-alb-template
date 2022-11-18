@@ -1,9 +1,3 @@
-variable "name" {
-  type = string
-  description = "The environment name. Inherited by the resources created in it."
-  default = "ERROR_NO_NAME"
-}
-
 variable "lb_subnet_ids" {
   type = list
   description = "The subnet IDs to put the LB into"

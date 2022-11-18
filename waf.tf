@@ -1,6 +1,6 @@
 
 resource "aws_wafv2_web_acl" "web-acl" {
-  name  = "${var.name}-2"
+  name  = "${local.name}-2"
   scope = "REGIONAL"
 
   default_action {
@@ -42,7 +42,7 @@ resource "aws_wafv2_web_acl" "web-acl" {
     }
     visibility_config {
       cloudwatch_metrics_enabled = false
-      metric_name                = "${var.name}-waf-whitelist"
+      metric_name                = "${local.name}-waf-whitelist"
       sampled_requests_enabled   = false
     }
     action {
@@ -86,7 +86,7 @@ resource "aws_wafv2_web_acl" "web-acl" {
     }
     visibility_config {
       cloudwatch_metrics_enabled = false
-      metric_name                = "${var.name}-waf-whitelist"
+      metric_name                = "${local.name}-waf-whitelist"
       sampled_requests_enabled   = false
     }
     action {
@@ -96,7 +96,7 @@ resource "aws_wafv2_web_acl" "web-acl" {
 
     visibility_config {
       cloudwatch_metrics_enabled = false
-      metric_name                = "${var.name}-waf"
+      metric_name                = "${local.name}-waf"
       sampled_requests_enabled   = false
     }
 

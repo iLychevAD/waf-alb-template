@@ -1,5 +1,5 @@
 resource "aws_lb" "alb" {
-  name               = var.name
+  name               = local.name
   internal           = false
   load_balancer_type = "application"
   subnets            = var.lb_subnet_ids
@@ -11,7 +11,7 @@ resource "aws_lb" "alb" {
   }
 
   tags = {
-    Environment = var.name
+    Environment = local.name
   }
 }
 

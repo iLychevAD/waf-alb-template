@@ -1,6 +1,6 @@
 resource "aws_security_group" "alb" {
-  name        = var.name
-  description = "${var.name} project security group"
+  name        = local.name
+  description = "${local.name} project security group"
   vpc_id      = var.vpc_id
 
   ingress {

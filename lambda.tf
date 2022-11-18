@@ -25,7 +25,7 @@ data "archive_file" "lambda" {
 }
 
 resource "aws_lb_target_group" "echo" {
-  name        = var.name
+  name        = local.name
   target_type = "lambda"
 }
 
@@ -39,7 +39,7 @@ resource "aws_lambda_permission" "with_lb" {
 
 resource "aws_lambda_function" "echo" {
   filename      = data.archive_file.lambda.output_path
-  function_name = var.name
+  function_name = local.name
   role          = aws_iam_role.iam_for_lambda.arn
   handler       = "lambda.echo"
 
